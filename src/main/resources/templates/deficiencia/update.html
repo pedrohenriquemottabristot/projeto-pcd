@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout/layout :: layout}">
     <body th:fragment="content">          
-        <form th:action="@{/deficiencia/create}" th:object="${deficienciaForm}" method="post">
+        <form th:action="@{/deficiencia/update/{id}(id=${id})}" th:object="${deficienciaForm}" method="post">
                 <div class="card mt-2">
                     <div class="card-header">
                         <h3 class="card-title">Formulário de Criação</h3>

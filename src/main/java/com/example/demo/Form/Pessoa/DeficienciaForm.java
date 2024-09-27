@@ -37,6 +37,7 @@ public class DeficienciaForm {
         this.nome = deficiencia.getNome();
         this.categoria = deficiencia.getCategoria();
     }   
+    
 
    
 }
