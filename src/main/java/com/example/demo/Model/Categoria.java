@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,10 +22,11 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String tipo;
+    @NotBlank(message = "O nome não pode estar em branco")
+    @Column(name = "nome", nullable = false, length = 100, unique = false)
+    private String nome;
 
-    public Categoria(String tipo) {
-        this.tipo = tipo;
+    public Categoria( String nome){
+        this.nome = nome;
     }
 }
